@@ -1,0 +1,2 @@
+# not make docker copy it
+node_modules

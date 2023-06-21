@@ -1,0 +1,58 @@
+version: '3.8'
+services:
+  # important: not exposing ports so the server only listen to docker containers in his network
+  server:
+    build: ./server
+    networks:
+      - server-network
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    depends_on:
+      - db
+      - cache
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:80'
+    networks:
+      - server-network
+    depends_on:
+      - server
+
+  db:
+    image: postgres:15.2
+    ports:
+      - '5432:5432' # used with Pgadmin and remove in production
+    env_file:
+      - .env
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    networks:
+      - server-network
+    volumes:
+      - ./database/postgresql:/var/lib/postgresql/data
+
+  cache:
+    image: 'redis:7.0'
+    networks:
+      - server-network
+    ports:
+      - "6379:6379" # used with RedisInsight and remove in production
+    volumes:
+      - ./sessionCache/redis_data:/data
+networks:
+  server-network:
+    driver: bridge
+
+volumes:
+  database:
+  redis_data:
+
+

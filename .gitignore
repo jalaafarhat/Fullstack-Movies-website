@@ -1,0 +1,6 @@
+/server/node_modules/
+/server/build/
+/server/production/
+
+/database/postgresql/
+/sessionCache/redis_data/

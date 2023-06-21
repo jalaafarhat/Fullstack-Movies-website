@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Movie/img/favicon.png" type="image/x-ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <title>STAR MOVIES</title>
+</head>
+
+<body>
+    <header>
+        <video src="Movie/video/theboys.webm" loop autoplay muted></video>
+        <nav>
+            <div class="logo_ul">
+                <img src="Movie/img/logo.png" alt="">
+                <ul id="nav_btns">
+                    <li>
+                        <p style="color: gold; font-size: larger;
+                            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0ff, 0 0 70px #0ff, 0 0 80px #0ff, 0 0 100px #0ff, 0 0 150px #0ff;"
+                            id="proUserMark">Pro</p>
+                    </li>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="/" id="series">Series</a>
+                    </li>
+                    <li>
+                        <a href="/" id="movies">Movies</a>
+                    </li>
+                    <li>
+                        <a href="/" id="signin">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="/" id="register">Register</a>
+                    </li>
+                    <li>
+                        <a style="color: goldenrod;" href="/" id="goPro">Go Pro</a>
+                    </li>
+                    <li>
+                        <a style="color: red;" href="/" id="logout">Logout</a>
+                    </li>
+                    <li>
+                        <a style="color: red;" href="/" id="deleteUser">Delete Account</a>
+                    </li>
+                    <li>
+                        <a style="color: yellow;" href="/" id="updateEmail">Update Email</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="search_user">
+                <input type="text" placeholder="search..." id="search_input">
+                <div class="search">
+                    <!-- <a href="#" class="card">
+                        <img src="./Movie/img/the boys.jpg" alt="">
+                        <div class="cont">
+                            <h3>The Boys</h3>
+                            <p>Action,2021 <span>IMDB</span> <i class="bi bi-star-fill"></i> 9.6</p>
+                            </p>
+                        </div>
+                    </a> -->
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <!-- intro to the website is the boys series -->
+            <h1 id="title">The Boys</h1>
+            <p id="desc">
+                Superheroes are often as popular as celebrities, as influential as politicians
+                , and sometimes even as revered as gods. But that's when they're using their powers for good. What
+                happens when the heroes go rogue and start abusing their powers?
+
+            </p>
+
+            <div class="details">
+                <h6>A Netflix Original Series</h6>
+                <h5 id="gen">Thriller</h5>
+                <h4 id="date">2021</h4>
+                <h3 id="rate"><span>IMDB</span> <i class="bi bi-star-fill"></i> 9.6</h3>
+            </div>
+
+            <div class="btns">
+                <a href="#" id="play">Watch <i class="bi bi-play-fill"></i></a>
+                <a href="#" id="download-main">Download <i class="bi bi-cloud-arrow-down-fill"></i></a>
+            </div>
+        </div>
+        <section>
+            <h4>Popular</h4>
+            <i class="bi bi-chevron-left"></i>
+            <i class="bi bi-chevron-right"></i>
+            <div class="cards">
+                <!-- <a href="#" class="card">
+                    <img src="./Movie/img/the boys.jpg" alt="" class="poster">
+                    <div class="rest_card">
+                        <img src="./Movie/img/the boys1.jpg" alt="">
+                        <div class="cont">
+                            <h4>The Boys</h4>
+                            <div class="sub">
+                                <p>Action,2022</p>
+                                <h3><span>IMDB</span> <i class="bi bi-star-fill"></i> 9.6</h3>
+                            </div>
+                        </div>
+                    </div>
+                </a> -->
+            </div>
+        </section>
+    </header>
+
+    <div class="form" id="register-form">
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <div class="form" id="signin-form">
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email2" name="email" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password2" name="password" required><br>
+            <button type="submit" id="submit-btn2">Submit</button>
+        </form>
+    </div>
+
+    <div class="form" id="update-form">
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email3" name="email" required><br>
+            <button type="submit" id="submit-btn3">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // global user holder and init
+        let userData =
+        {
+            isLogin: false,
+            userName: "",
+            email: "",
+            proUser: false
+        };
+    </script>
+    <script src="app.js"></script>
+    <script src="filter.js"></script>
+    <script src="fromHandler.js"></script>
+</body>
+
+</html>
